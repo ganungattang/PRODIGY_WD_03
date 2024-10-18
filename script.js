@@ -4,9 +4,9 @@ const cells = document.querySelectorAll('.cell');
 const statusDisplay = document.getElementById('status');
 const resetButton = document.getElementById('resetBtn');
 
-let currentPlayer = 'X'; // Starting player
-let gameActive = true; // Game state
-let board = Array(9).fill(null); // Game board
+let currentPlayer = 'X'; 
+let gameActive = true; 
+let board = Array(9).fill(null); 
 
 // Winning conditions
 const winningConditions = [
@@ -29,17 +29,17 @@ function handleCellClick(event) {
         return; // Ignore if cell is filled or game is over
     }
 
-    makeMove(index); // Player makes a move
+    makeMove(index); 
 }
 
 // Make a move
 function makeMove(index) {
-    board[index] = currentPlayer; // Update board
-    cells[index].textContent = currentPlayer; // Display current player's mark
-    checkWinner(); // Check for a winner
+    board[index] = currentPlayer; 
+    cells[index].textContent = currentPlayer; 
+    checkWinner(); 
 
     if (gameActive) {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch player
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; 
     }
 }
 
@@ -62,12 +62,12 @@ function checkWinner() {
 
 // Reset game
 function resetGame() {
-    gameActive = true; // Reset game state
-    currentPlayer = 'X'; // Reset current player
-    board.fill(null); // Clear board
+    gameActive = true; 
+    currentPlayer = 'X'; 
+    board.fill(null); 
     statusDisplay.textContent = '';
     cells.forEach(cell => {
-        cell.textContent = ''; // Clear cell content
+        cell.textContent = ''; 
     });
 }
 
